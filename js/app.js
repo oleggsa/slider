@@ -27,17 +27,23 @@
         }
     });
 
+    function slideIndex(index) {
+        if (index === slidesCount) {
+            activeSlideIndex = 0;
+        }
+        else if (activeSlideIndex < 0) {
+            activeSlideIndex = slidesCount - 1;
+        }
+    }
+
     function changeSlide(direction) {
         if (direction === 'up') {
             activeSlideIndex++;
-            if (activeSlideIndex === slidesCount) {
-                activeSlideIndex = 0;
-            }
+            slideIndex(activeSlideIndex);
+
         } else if (direction === 'down') {
             activeSlideIndex--;
-            if (activeSlideIndex < 0) {
-                activeSlideIndex = slidesCount - 1;
-            }
+            slideIndex(activeSlideIndex);
         }
         const height = container.clientHeight;
 
