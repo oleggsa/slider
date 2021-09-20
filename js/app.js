@@ -39,12 +39,10 @@
     function changeSlide(direction) {
         if (direction === 'up') {
             activeSlideIndex++;
-            slideIndex(activeSlideIndex);
-
         } else if (direction === 'down') {
             activeSlideIndex--;
-            slideIndex(activeSlideIndex);
         }
+        slideIndex(activeSlideIndex);
         const height = container.clientHeight;
 
         mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`;
